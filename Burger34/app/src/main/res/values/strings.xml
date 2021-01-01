@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">Burger 34</string>
+    <string name="popularDishesh">Popular This Week</string>
+    <string name="allMenuItems">All Menu Items</string>
+    <string name="qty">Qty</string>
+    <string name="delivery">30/-</string>
+    <string name="quantity">Quantity</string>
+    <string name="buy_now">Add to Cart</string>
+
+
+    <!--    product details-->
+    <string name="product001Name">Aloo Tikki Burger</string>
+    <string name="product001Description">Aloo tikki is a snack originating from the Indian subcontinent; in North Indian and Bangladeshi preparation, it is made out of boiled potatoes, peas, and various curry spices. Aloo means potato, and the word tikki means a small cutlet or croquette in Hindi and Marathi.</string>
+    <string name="product001Price">20/-</string>
+    <string name="product001Price_Btn">BUY\n20 rs Only</string>
+
+    <string name="product002Name">Mayonnaise Burger</string>
+    <string name="product002Description">Burgers taste better with mayo. Yeah, delicious, creamy mayonnaise, scooped straight from the jar, judiciously smeared across a lightly toasted bun and smooshed into a juicy patty—hold the ketchup, hold the mustard. You\'ve gotta try it.</string>
+    <string name="product002Price">25/-</string>
+    <string name="product002Price_Btn">BUY\n25 rs Only</string>
+
+    <string name="product003Name">Schezwan Burger</string>
+    <string name="product003Description">Schezwan Burgers are a spicy amalgamation of the Schezwan ingredients you might find in recipes like Crispy Schezwan, Kung Pao Stir Frys, and Dan Dan Noodles. Ginger, garlic, peanuts, sesame, Chinese vinegar, soy, and a whole lot of spice make these burgers completely irresistible.</string>
+    <string name="product003Price">30/-</string>
+    <string name="product003Price_Btn">BUY\n30 rs Only</string>
+
+    <string name="product004Name">Paneer Burger</string>
+    <string name="product004Description">Think spicy and our Indian masalas are sure to spring up in your mind! Yes, this cutlet features a blend of common Indian spices, ensuring a top rating by our desi taste buds.</string>
+    <string name="product004Price">40/-</string>
+    <string name="product004Price_Btn">BUY\n40 rs Only</string>
+
+    <string name="product005Name">Cheese Burger</string>
+    <string name="product005Description">A cheeseburger is a hamburger topped with cheese. Traditionally, the slice of cheese is placed on top of the veg patty, but the burger can include variations in structure, ingredients and composition. The cheese is usually added to the cooking hamburger patty shortly before serving, which allows the cheese to melt.</string>
+    <string name="product005Price">45/-</string>
+    <string name="product005Price_Btn">BUY\n45 rs Only</string>
+
+
+    //Strings
+    <string name="name">SAHIL A SHEIKH</string>
+    <string name="linkedIn_tag">LinkedIn</string>
+    <string name="instagram_tag">INSTAGRAM</string>
+    <string name="app_info_name_version">Let\'s Meme V1.0.2</string>
+    <string name="developer_firm_info"># By Begawo Corporation #</string>
+    <string name="contactDeveloper">CONTACT DEVELOPER</string>
+    <string name="email_tag">E-Mail</string>
+    <string name="aboutMe">Hi, I am Sahil, developer of this application, if you like my work or wanted to contact me then you can contact me through my social media handles which is given below, \nThankyou.</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="mapView">Location</string>
+    <string name="aboutDev">About Developer</string>
+    <string name="instagramBurger34">Instagram</string>
+    <string name="phone_tag">PHONE</string>
+    <string name="confirm_your_order">Confirm Your Order</string>
+
+
+</resources>

@@ -1,0 +1,447 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/title_round_background"
+        android:gravity="center_vertical"
+        android:padding="5sp"
+        android:paddingStart="10dp"
+        android:text="@string/app_name"
+        android:textColor="#ffffff"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:fontFamily="@font/acme"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="10dp"
+        tools:ignore="RtlSymmetry" />
+
+    <ImageView
+        android:id="@+id/infoImg"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="infoImg"
+        app:layout_constraintBottom_toBottomOf="@id/appTitle"
+        app:layout_constraintEnd_toStartOf="@+id/userInfo"
+        app:layout_constraintTop_toTopOf="@id/appTitle"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/ic_baseline_info_24"
+        app:tint="#ffffff"
+        tools:ignore="VectorDrawableCompat" />
+
+
+    <ImageView
+        android:id="@+id/userInfo"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="userInfo"
+        app:layout_constraintBottom_toBottomOf="@id/appTitle"
+        app:layout_constraintEnd_toStartOf="@+id/cart"
+        app:layout_constraintTop_toTopOf="@id/appTitle"
+        app:layout_constraintVertical_bias="0.533"
+        app:srcCompat="@drawable/ic_baseline_account_circle_24"
+        app:tint="#ffffff"
+        tools:ignore="VectorDrawableCompat" />
+
+
+    <ImageView
+        android:id="@+id/cart"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="16dp"
+        android:contentDescription="@string/app_name"
+        android:onClick="cart"
+        app:layout_constraintBottom_toBottomOf="@id/appTitle"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/appTitle"
+        app:srcCompat="@drawable/ic_baseline_shopping_cart_24"
+        app:tint="#ffffff"
+        tools:ignore="VectorDrawableCompat" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/card"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/appTitle"
+        android:orientation="horizontal">
+
+<!--<LinearLayout-->
+<!--    android:layout_width="match_parent"-->
+<!--    android:layout_height="wrap_content"-->
+<!--    tools:ignore="MissingConstraints">-->
+
+<!--    <ImageView-->
+<!--        android:id="@+id/poster"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="146dp"-->
+<!--        android:layout_marginStart="20dp"-->
+<!--        android:layout_marginLeft="20dp"-->
+<!--        android:layout_marginTop="16dp"-->
+<!--        android:layout_marginEnd="20dp"-->
+<!--        android:layout_marginRight="20dp"-->
+<!--        android:cropToPadding="false"-->
+<!--        android:scaleType="fitXY"-->
+<!--        android:background="@drawable/round_background"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/appTitle"-->
+<!--        app:srcCompat="@drawable/poster_one"-->
+<!--        tools:ignore="ContentDescription" />-->
+
+<!--</LinearLayout>-->
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <TextView
+        android:id="@+id/allMenuItems_Text"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="@string/allMenuItems"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:fontFamily="@font/acme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/allMenuItems_Text"
+        app:layout_constraintVertical_bias="0.0">
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#FFFFFF"
+            android:orientation="vertical">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_001"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="2sp"
+                android:background="#FFFFFF"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/all_menu_imageProduct001"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/mayonnaiseburger_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/all_menu_nameProduct001"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product001Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct001"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <Button
+                    android:id="@+id/buyProduct001"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="7sp"
+                    android:background="@drawable/round_background"
+                    android:backgroundTint="#f83f00"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product001Price_Btn"
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/product_001"
+                    app:layout_constraintRight_toRightOf="@id/product_001"
+
+                    app:layout_constraintTop_toTopOf="@id/product_001"
+                    tools:ignore="UnusedAttribute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_002"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="2sp"
+                android:background="#FFFFFF"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/all_menu_imageProduct002"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/tikkiburger"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/all_menu_nameProduct002"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product002Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct002"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NotSibling" />
+
+
+                <Button
+                    android:id="@+id/buyProduct002"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="7sp"
+                    android:background="@drawable/round_background"
+                    android:backgroundTint="#f83f00"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product002Price_Btn"
+
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/product_002"
+
+                    app:layout_constraintRight_toRightOf="@id/product_002"
+                    app:layout_constraintTop_toTopOf="@id/product_002"
+                    tools:ignore="UnusedAttribute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_003"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="2sp"
+                android:background="#FFFFFF"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/all_menu_imageProduct003"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/schezwanburger_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/all_menu_nameProduct003"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product003Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct003"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NotSibling" />
+
+
+                <Button
+                    android:id="@+id/buyProduct003"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="7sp"
+                    android:background="@drawable/round_background"
+                    android:backgroundTint="#f83f00"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product003Price_Btn"
+
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/product_003"
+
+                    app:layout_constraintRight_toRightOf="@id/product_003"
+                    app:layout_constraintTop_toTopOf="@id/product_003"
+                    tools:ignore="UnusedAttribute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_004"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="2sp"
+                android:background="#FFFFFF"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/all_menu_imageProduct004"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/paneerburger_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/all_menu_nameProduct004"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product004Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct004"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NotSibling" />
+
+
+                <Button
+                    android:id="@+id/buyProduct004"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="7sp"
+                    android:background="@drawable/round_background"
+                    android:backgroundTint="#f83f00"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product004Price_Btn"
+
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/product_004"
+
+                    app:layout_constraintRight_toRightOf="@id/product_004"
+                    app:layout_constraintTop_toTopOf="@id/product_004"
+                    tools:ignore="UnusedAttribute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/product_005"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="left"
+                android:layout_marginTop="5sp"
+                android:layout_marginBottom="2sp"
+                android:background="#FFFFFF"
+                tools:ignore="RtlHardcoded">
+
+
+                <ImageView
+                    android:id="@+id/all_menu_imageProduct005"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="5sp"
+                    android:layout_marginLeft="5sp"
+                    android:contentDescription="@string/app_name"
+                    android:src="@drawable/cheeseburger_logo"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="VectorDrawableCompat" />
+
+                <TextView
+                    android:id="@+id/all_menu_nameProduct005"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product005Name"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct005"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:ignore="NotSibling" />
+
+
+                <Button
+                    android:id="@+id/buyProduct005"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginRight="7sp"
+                    android:background="@drawable/round_background"
+                    android:backgroundTint="#f83f00 "
+                    android:fontFamily="@font/acme"
+                    android:text="@string/product005Price_Btn"
+
+                    android:textColor="#fff"
+                    android:textStyle="bold"
+                    app:layout_constraintBottom_toBottomOf="@id/product_005"
+
+                    app:layout_constraintRight_toRightOf="@id/product_005"
+                    app:layout_constraintTop_toTopOf="@id/product_005"
+                    tools:ignore="UnusedAttribute" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

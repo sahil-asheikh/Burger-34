@@ -1,0 +1,623 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    tools:context=".ConformOrder">
+
+    <TextView
+        android:id="@+id/orderText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/acme"
+        android:text="@string/confirm_your_order"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+
+     <ImageView
+        android:id="@+id/editInfo_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+         android:layout_marginEnd="8dp"
+         android:contentDescription="@string/app_name"
+        android:onClick="editInfo"
+        app:layout_constraintBottom_toBottomOf="@+id/orderText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/orderText"
+        app:srcCompat="@drawable/ic_baseline_edit_24"
+        app:tint="#ffffff"
+         android:background="@drawable/round_background"
+        tools:ignore="VectorDrawableCompat" />
+
+    <TextView
+        android:id="@+id/customerName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Name"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/editInfo_btn"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#F8F4F4"
+        android:hint="Enter your name"
+        android:inputType="textPersonName"
+        android:padding="5sp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/customerName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@id/customerName"
+        tools:ignore="HardcodedText,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/customerAddress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Address"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customerName"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/address"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#F8F4F4"
+        android:hint="Enter your Address"
+        android:inputType="textPostalAddress"
+        android:padding="5sp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/customerAddress"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@id/customerAddress"
+        tools:ignore="HardcodedText,RtlHardcoded,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/customerNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Number"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/customerAddress"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/number"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:background="#F8F4F4"
+        android:hint="Enter your Number"
+        android:inputType="number"
+        android:padding="5sp"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/customerNumber"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/guideline"
+        app:layout_constraintTop_toTopOf="@id/customerNumber"
+        tools:ignore="HardcodedText,TextViewEdits" />
+
+    <TextView
+        android:id="@+id/productName_Indication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Ordered"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/customerNumber"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/productName01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="@string/product001Name"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/productName_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productName_Indication"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productName02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="@string/product002Name"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/productName_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productName01"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productName03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="@string/product003Name"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/productName_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productName02"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productName04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="@string/product004Name"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/productName_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productName03"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productName05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="@string/product005Name"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/productName_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productName04"
+        tools:ignore="RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productQuantity_Indication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Quantity"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/productName_Indication"
+        app:layout_constraintEnd_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toEndOf="@+id/productName_Indication"
+        app:layout_constraintTop_toTopOf="@+id/productName_Indication"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/productQuantity_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/productQuantity_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productQuantity_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productQuantity_Indication"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/productQuantity_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/productQuantity_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productQuantity_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productQuantity_01"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productQuantity_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/productQuantity_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productQuantity_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productQuantity_02"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productQuantity_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/productQuantity_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productQuantity_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productQuantity_03"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productQuantity_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/productQuantity_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productQuantity_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productQuantity_04"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productTotalPrice_Indication"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Price"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/productQuantity_Indication"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/productName_Indication"
+        tools:ignore="HardcodedText" />
+
+
+    <TextView
+        android:id="@+id/productTotalPrice_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productTotalPrice_Indication"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productTotalPrice_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productTotalPrice_01"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productTotalPrice_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productTotalPrice_02"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productTotalPrice_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        android:text="0"
+        app:layout_constraintEnd_toEndOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productTotalPrice_03"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+    <TextView
+        android:id="@+id/productTotalPrice_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="0"
+        android:textColor="#000000"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintStart_toStartOf="@+id/productTotalPrice_Indication"
+        app:layout_constraintTop_toBottomOf="@+id/productTotalPrice_04"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/coupon_code"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Apply Coupon"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/productName05"
+        tools:ignore="HardcodedText" />
+
+
+    <!--
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutA4"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/coupon_code"
+            app:layout_constraintEnd_toStartOf="@+id/applyCouponCode"
+            app:layout_constraintStart_toEndOf="@+id/coupon_code"
+            app:layout_constraintTop_toTopOf="@id/coupon_code"
+            tools:ignore="MissingConstraints">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/coupon_code_input"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="#F8F4F4"
+                android:hint="Enter Coupon Code Here"
+                android:inputType="textPersonName"
+                android:padding="5sp"
+                android:textColor="#000000"
+                android:textSize="20sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+    -->
+
+        <EditText
+            android:id="@+id/coupon_code_input"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toBottomOf="@+id/coupon_code"
+            app:layout_constraintEnd_toStartOf="@+id/applyCouponCode"
+            app:layout_constraintStart_toEndOf="@+id/coupon_code"
+            app:layout_constraintTop_toTopOf="@id/coupon_code"
+            android:background="#F8F4F4"
+            android:hint="Enter Coupon Code Here"
+            android:inputType="textPersonName"
+            android:padding="5sp"
+            android:textColor="#000000"
+            android:textSize="20sp"
+            tools:ignore="Autofill,HardcodedText" />
+
+
+    <Button
+        android:id="@+id/applyCouponCode"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_marginEnd="8dp"
+        android:background="@drawable/round_background"
+        android:text="Apply"
+        android:textColor="#ffffff"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/coupon_code_input"
+        app:layout_constraintBottom_toBottomOf="@+id/coupon_code_input"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/deliveryText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="16dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Delivery Charges"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/coupon_code"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/delivery"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text="30/-"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/deliveryText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/deliveryText"
+        app:layout_constraintTop_toTopOf="@+id/deliveryText"
+        tools:ignore="HardcodedText,RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/priceTotal_Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="10dp"
+        android:background="#ffffff"
+        android:fontFamily="@font/acme"
+        android:text="Total Rs. "
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/delivery"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:id="@+id/priceTotalPaid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="20sp"
+        android:layout_marginRight="8dp"
+        android:fontFamily="@font/acme"
+        android:gravity="right"
+        android:text=""
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/priceTotal_Indicator"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/priceTotal_Indicator"
+        app:layout_constraintTop_toTopOf="@+id/priceTotal_Indicator"
+        tools:ignore="RtlHardcoded" />
+
+
+    <TextView
+        android:id="@+id/codText"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:fontFamily="@font/acme"
+        android:gravity="center"
+        android:text="You can Google Pay, PhonePe or Paytm even after your order arrives at your Doorstep."
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codCheckBox"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/cancelBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@color/colorPrimary"
+        android:fontFamily="@font/acme"
+        android:padding="5sp"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:text="Cancel Order"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="HardcodedText" />
+
+    <Button
+        android:id="@+id/conformBtn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#388E3C"
+        android:fontFamily="@font/acme"
+        android:padding="5sp"
+        android:text="Confirm Order"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelBtn"
+        tools:ignore="HardcodedText" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.2" />
+
+    <CheckBox
+        android:id="@+id/codCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Cash On Delivery"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/priceTotalPaid"
+        tools:ignore="HardcodedText" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

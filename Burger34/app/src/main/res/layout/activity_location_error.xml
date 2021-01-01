@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".locationError"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/burger34_logo"
+        android:layout_gravity="center"
+        tools:ignore="ContentDescription" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Welcome to Burger 34"
+        android:textColor="#000000"
+        android:gravity="center"
+        android:fontFamily="@font/acme"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="We are very sorry but, online delivery is only available in Chandrapur, so if you are not live in Chandrapur then it is not possible to deliver your Orders"
+        android:textColor="#000000"
+        android:fontFamily="@font/acme"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:layout_marginTop="5sp"
+
+        tools:ignore="HardcodedText" />
+</androidx.appcompat.widget.LinearLayoutCompat>

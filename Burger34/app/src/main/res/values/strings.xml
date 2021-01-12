@@ -1,9 +1,7 @@
 <resources>
     <string name="app_name">Burger 34</string>
-    <string name="popularDishesh">Popular This Week</string>
     <string name="allMenuItems">All Menu Items</string>
     <string name="qty">Qty</string>
-    <string name="delivery">30/-</string>
     <string name="quantity">Quantity</string>
     <string name="buy_now">Add to Cart</string>
 
@@ -39,9 +37,6 @@
     <string name="name">SAHIL A SHEIKH</string>
     <string name="linkedIn_tag">LinkedIn</string>
     <string name="instagram_tag">INSTAGRAM</string>
-    <string name="app_info_name_version">Let\'s Meme V1.0.2</string>
-    <string name="developer_firm_info"># By Begawo Corporation #</string>
-    <string name="contactDeveloper">CONTACT DEVELOPER</string>
     <string name="email_tag">E-Mail</string>
     <string name="aboutMe">Hi, I am Sahil, developer of this application, if you like my work or wanted to contact me then you can contact me through my social media handles which is given below, \nThankyou.</string>
     <string name="phone_number">Phone Number</string>

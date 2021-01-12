@@ -162,8 +162,8 @@
 
                 <ImageView
                     android:id="@+id/all_menu_imageProduct001"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="5sp"
                     android:layout_marginLeft="5sp"
                     android:contentDescription="@string/app_name"
@@ -181,7 +181,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/acme"
                     android:text="@string/product001Name"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct001"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -189,8 +189,8 @@
 
                 <Button
                     android:id="@+id/buyProduct001"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
                     android:layout_marginRight="7sp"
                     android:background="@drawable/round_background"
                     android:backgroundTint="#f83f00"
@@ -219,8 +219,8 @@
 
                 <ImageView
                     android:id="@+id/all_menu_imageProduct002"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="5sp"
                     android:layout_marginLeft="5sp"
                     android:contentDescription="@string/app_name"
@@ -238,7 +238,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/acme"
                     android:text="@string/product002Name"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct002"
                     app:layout_constraintTop_toTopOf="parent"
@@ -247,8 +247,8 @@
 
                 <Button
                     android:id="@+id/buyProduct002"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
                     android:layout_marginRight="7sp"
                     android:background="@drawable/round_background"
                     android:backgroundTint="#f83f00"
@@ -278,8 +278,8 @@
 
                 <ImageView
                     android:id="@+id/all_menu_imageProduct003"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="5sp"
                     android:layout_marginLeft="5sp"
                     android:contentDescription="@string/app_name"
@@ -297,7 +297,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/acme"
                     android:text="@string/product003Name"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct003"
                     app:layout_constraintTop_toTopOf="parent"
@@ -306,8 +306,8 @@
 
                 <Button
                     android:id="@+id/buyProduct003"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
                     android:layout_marginRight="7sp"
                     android:background="@drawable/round_background"
                     android:backgroundTint="#f83f00"
@@ -337,8 +337,8 @@
 
                 <ImageView
                     android:id="@+id/all_menu_imageProduct004"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="5sp"
                     android:layout_marginLeft="5sp"
                     android:contentDescription="@string/app_name"
@@ -356,7 +356,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/acme"
                     android:text="@string/product004Name"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct004"
                     app:layout_constraintTop_toTopOf="parent"
@@ -365,8 +365,8 @@
 
                 <Button
                     android:id="@+id/buyProduct004"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
                     android:layout_marginRight="7sp"
                     android:background="@drawable/round_background"
                     android:backgroundTint="#f83f00"
@@ -396,8 +396,8 @@
 
                 <ImageView
                     android:id="@+id/all_menu_imageProduct005"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75dp"
+                    android:layout_height="75dp"
                     android:layout_marginStart="5sp"
                     android:layout_marginLeft="5sp"
                     android:contentDescription="@string/app_name"
@@ -415,7 +415,7 @@
                     android:layout_marginTop="10dp"
                     android:fontFamily="@font/acme"
                     android:text="@string/product005Name"
-                    android:textSize="18sp"
+                    android:textSize="15sp"
                     android:textStyle="bold"
                     app:layout_constraintStart_toEndOf="@+id/all_menu_imageProduct005"
                     app:layout_constraintTop_toTopOf="parent"
@@ -424,8 +424,8 @@
 
                 <Button
                     android:id="@+id/buyProduct005"
-                    android:layout_width="100dp"
-                    android:layout_height="100dp"
+                    android:layout_width="75sp"
+                    android:layout_height="75sp"
                     android:layout_marginRight="7sp"
                     android:background="@drawable/round_background"
                     android:backgroundTint="#f83f00 "

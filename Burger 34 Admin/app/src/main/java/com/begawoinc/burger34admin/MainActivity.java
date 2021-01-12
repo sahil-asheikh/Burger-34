@@ -87,4 +87,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+
+    public void bannrDelete(View view) {
+        Intent intent = new Intent(MainActivity.this, banner_delete.class);
+        startActivity(intent);
+    }
 }

@@ -28,10 +28,33 @@ public class userInfo extends AppCompatActivity {
         saveBtn = findViewById(R.id.saveBtn);
 
 
+//              first time start
+//                check if first time start
+        SharedPreferences sharedPreferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
+        String firstTime = sharedPreferences.getString("FirstTimeInstall", "");
+
+        if (firstTime.equals("Yes")) {
+
+//                  if app is opened for the first time
+            Intent intent = new Intent(userInfo.this, MainActivity.class);
+            startActivity(intent);
+            //                  to end this activity
+            userInfo.this.finish();
+
+        } else {
+//                    else store Yes in sharedPreference
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("FirstTimeInstall", "Yes");
+            editor.apply();
+        }
+
+
+//      onclick listener for save button
         saveBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+//              to store user info
                 if (TextUtils.isEmpty(userName_userInfo.getText().toString())){
                     Toast.makeText(userInfo.this, "Please Enter Your Name", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(userNumber_userInfo.getText().toString())){
@@ -44,7 +67,14 @@ public class userInfo extends AppCompatActivity {
                     final String userNumber = userNumber_userInfo.getText().toString();
                     final String userAddress = userAddress_userInfo.getText().toString();
 
+//                  user info save method invoked
                     saveInfo(userName, userNumber, userAddress);
+
+//                  intent to move on main activity
+                    Intent intent = new Intent(userInfo.this, MainActivity.class);
+                    startActivity(intent);
+
+//                  to end this activity
                     userInfo.this.finish();
 
                 }
@@ -54,6 +84,7 @@ public class userInfo extends AppCompatActivity {
         });
     }
 
+//  method to store user info
     private void saveInfo(String userName, String userNumber, String userAddress) {
         SharedPreferences sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();

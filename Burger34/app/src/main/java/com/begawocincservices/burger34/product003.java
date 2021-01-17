@@ -3,6 +3,7 @@ package com.begawocincservices.burger34;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -43,7 +44,11 @@ public class product003 extends AppCompatActivity {
                     editor.putInt("price_03", price);
                     editor.apply();
 
-                    Toast.makeText(product003.this, "Your Order is Added to Cart", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(product003.this, "Your Order is Added to Cart", Toast.LENGTH_SHORT).show();
+
+                    Intent intent = new Intent(product003.this, ConformOrder.class);
+                    startActivity(intent);
+                    product003.this.finish();
                 }
             }
         });

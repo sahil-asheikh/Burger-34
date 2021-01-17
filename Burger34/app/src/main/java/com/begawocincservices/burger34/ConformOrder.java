@@ -32,7 +32,7 @@ public class ConformOrder extends AppCompatActivity {
     android.app.AlertDialog.Builder builder;
 //    TextInputEditText coupon_code_input;
     CheckBox codCheckBox;
-    Button placeOrder, cancelOrder, applyCouponCode;
+    Button placeOrder, cancelOrder, applyCouponCode, addMoreBtn;
 
     Firebase url;
 
@@ -56,6 +56,7 @@ public class ConformOrder extends AppCompatActivity {
         userNumber = findViewById(R.id.number);
         placeOrder = findViewById(R.id.conformBtn);
         cancelOrder = findViewById(R.id.cancelBtn);
+        addMoreBtn = findViewById(R.id.addMoreBtn);
         coupon_code_input = findViewById(R.id.coupon_code_input);
         applyCouponCode = findViewById(R.id.applyCouponCode);
         codCheckBox = findViewById(R.id.codCheckBox);
@@ -202,6 +203,16 @@ public class ConformOrder extends AppCompatActivity {
                 Intent intent = new Intent(ConformOrder.this, cancledOrder.class);
                 startActivity(intent);
                 clearData(sharedPreferences_01, sharedPreferences_02, sharedPreferences_03, sharedPreferences_04, sharedPreferences_05);
+                ConformOrder.this.finish();
+            }
+        });
+
+//        add more button
+        addMoreBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(ConformOrder.this, MainActivity.class);
+                startActivity(intent);
                 ConformOrder.this.finish();
             }
         });

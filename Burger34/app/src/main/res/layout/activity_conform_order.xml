@@ -584,13 +584,28 @@
         tools:ignore="HardcodedText" />
 
     <Button
+        android:id="@+id/addMoreBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="#388E3C"
+        android:fontFamily="@font/acme"
+        android:padding="5sp"
+        android:paddingLeft="15sp"
+        android:paddingRight="15sp"
+        android:text="Add More"
+        android:textColor="#ffffff"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cancelBtn"
+        tools:ignore="HardcodedText" />
+
+    <Button
         android:id="@+id/conformBtn"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:layout_marginBottom="16dp"
         android:background="#388E3C"
         android:fontFamily="@font/acme"
@@ -599,7 +614,7 @@
         android:textColor="#ffffff"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/cancelBtn"
+        app:layout_constraintStart_toEndOf="@+id/addMoreBtn"
         tools:ignore="HardcodedText" />
 
     <androidx.constraintlayout.widget.Guideline

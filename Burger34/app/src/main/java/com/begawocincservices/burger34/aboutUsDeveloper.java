@@ -21,7 +21,7 @@ import org.json.JSONObject;
 
 public class aboutUsDeveloper extends AppCompatActivity {
 
-    Button instagram, linkedIn, email, phone, test_btn;
+    Button instagram, linkedIn, email, test_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +33,6 @@ public class aboutUsDeveloper extends AppCompatActivity {
         instagram = findViewById(R.id.instagram);
         linkedIn = findViewById(R.id.linkedIn);
         email = findViewById(R.id.email);
-        phone = findViewById(R.id.phone);
         test_btn = findViewById(R.id.test_btn);
 
         instagram.setOnClickListener(new View.OnClickListener() {
@@ -65,22 +64,12 @@ public class aboutUsDeveloper extends AppCompatActivity {
             }
         });
 
-        phone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(Intent.ACTION_DIAL);
-                intent.setData(Uri.parse("tel:8766509387"));
-                startActivity(intent);
-            }
-        });
-
         test_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
             }
         });
-
 
     }
 }

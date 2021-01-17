@@ -69,22 +69,6 @@
             android:textSize="15sp" />
 
         <Button
-            android:id="@+id/phone"
-            android:layout_width="110dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="20dp"
-            android:layout_marginBottom="0dp"
-            android:background="@color/colorPrimary"
-            android:padding="5sp"
-            android:text="@string/phone_tag"
-            android:textColor="#ffffff"
-            android:textStyle="bold"
-            app:layout_constraintBottom_toTopOf="@+id/linkedIn"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.501"
-            app:layout_constraintStart_toStartOf="parent" />
-
-        <Button
             android:id="@+id/email"
             android:layout_width="110dp"
             android:layout_height="30dp"

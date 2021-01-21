@@ -82,6 +82,7 @@ public class ConformOrder extends AppCompatActivity {
 
 //      setting user details
         SharedPreferences sharedPreferences = getSharedPreferences("userData", Context.MODE_PRIVATE);
+
         String userName_SP = sharedPreferences.getString("userName", "");
         userName.setText(userName_SP);
 
@@ -149,6 +150,8 @@ public class ConformOrder extends AppCompatActivity {
 
 //        coupon code section
         final int totalQty = qtyEntered_01 + qtyEntered_02 + qtyEntered_03 + qtyEntered_04 + qtyEntered_05;
+
+//      fetch coupon code
         final String coupon = "GRAB10";
 
         applyCouponCode.setOnClickListener(new View.OnClickListener() {

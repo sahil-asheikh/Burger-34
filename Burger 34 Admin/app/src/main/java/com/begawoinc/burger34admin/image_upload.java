@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -28,12 +30,27 @@ public class image_upload extends AppCompatActivity {
     ImageView imageView;
     Uri uri;
     String imageUrl;
+    EditText coupon_code;
+    Button updateCoupon_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_image_upload);
 
         imageView = (ImageView) findViewById(R.id.image);
+        updateCoupon_btn = findViewById(R.id.Update_Coupon_Code);
+        findViewById(R.id.coupon_code);
+
+//      update coupon code
+        updateCoupon_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                String code = coupon_code.getText().toString();
+                updateStatus_firebase(code);
+
+            }
+        });
 
     }
 
@@ -56,6 +73,7 @@ public class image_upload extends AppCompatActivity {
         else Toast.makeText(this,"You Haven't pick Image",Toast.LENGTH_SHORT).show();
     }
 
+//  methods for banners
     public void UploadImage (){
 
         StorageReference storageReference = FirebaseStorage.getInstance()
@@ -90,7 +108,7 @@ public class image_upload extends AppCompatActivity {
         UploadImage();
     }
 
-        public void uploadBanner(){
+    public void uploadBanner(){
 
             Banner banner = new Banner(
                    imageUrl);
@@ -109,5 +127,10 @@ public class image_upload extends AppCompatActivity {
 
                 }
             });
+    }
+
+//  method to update the coupon code
+    public void updateStatus_firebase(String code){
+        Toast.makeText(this, "Code Updated", Toast.LENGTH_SHORT).show();
     }
  }

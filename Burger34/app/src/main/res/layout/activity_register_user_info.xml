@@ -4,14 +4,28 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/colorPrimary"
     tools:context=".userInfo">
 
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/cons2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="200dp"
+        android:background="@drawable/register_backgroung"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="40dp"
         android:fontFamily="@font/acme"
         android:text="Enter Your Details"
         android:textColor="#000000"
@@ -19,15 +33,14 @@
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="@id/cons2" />
 
     <TextView
         android:id="@+id/name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="50dp"
         android:fontFamily="@font/acme"
         android:text="Name"
         android:textColor="#000000"
@@ -37,10 +50,14 @@
         app:layout_constraintTop_toBottomOf="@+id/title" />
 
 
-
     <EditText
         android:id="@+id/userName_userInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="clip_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:background="#F8F4F4"
         android:foregroundGravity="center_vertical"
         android:gravity="center_vertical"
@@ -49,16 +66,10 @@
         android:padding="5sp"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-       android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/name"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-       tools:ignore="MissingConstraints"
-        android:autofillHints=""
-    />
+        tools:ignore="MissingConstraints" />
 
     <TextView
         android:id="@+id/number"
@@ -77,7 +88,12 @@
 
     <EditText
         android:id="@+id/userNumber_userInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="clip_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:background="#F8F4F4"
         android:foregroundGravity="center_vertical"
         android:gravity="center_vertical"
@@ -86,16 +102,10 @@
         android:padding="5sp"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/number"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        tools:ignore="MissingConstraints"
-        android:autofillHints=""
-        />
+        tools:ignore="MissingConstraints" />
 
 
     <TextView
@@ -115,7 +125,12 @@
 
     <EditText
         android:id="@+id/userAddress_userInfo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:layout_gravity="clip_vertical"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:autofillHints=""
         android:background="#F8F4F4"
         android:foregroundGravity="center_vertical"
         android:gravity="center_vertical"
@@ -124,16 +139,10 @@
         android:padding="5sp"
         android:textColor="#000000"
         android:textSize="20sp"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
         app:layout_constraintBottom_toBottomOf="@+id/address"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline2"
-        tools:ignore="MissingConstraints"
-        android:autofillHints=""
-        />
+        tools:ignore="MissingConstraints" />
 
     <Button
         android:id="@+id/saveBtn"
@@ -159,5 +168,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_percent="0.24" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:background="@drawable/logo_backgroung"
+        app:layout_constraintBottom_toTopOf="@+id/cons2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/burger34_logo"
+        android:padding="10sp"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

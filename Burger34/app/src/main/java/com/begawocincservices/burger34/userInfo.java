@@ -22,32 +22,12 @@ public class userInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_info);
 
+
+
         userName_userInfo = findViewById(R.id.userName_userInfo);
         userNumber_userInfo = findViewById(R.id.userNumber_userInfo);
         userAddress_userInfo = findViewById(R.id.userAddress_userInfo);
         saveBtn = findViewById(R.id.saveBtn);
-
-
-//              first time start
-//                check if first time start
-        SharedPreferences sharedPreferences = getSharedPreferences("PREFERENCE", MODE_PRIVATE);
-        String firstTime = sharedPreferences.getString("FirstTimeInstall", "");
-
-        if (firstTime.equals("Yes")) {
-
-//                  if app is opened for the first time
-            Intent intent = new Intent(userInfo.this, MainActivity.class);
-            startActivity(intent);
-            //                  to end this activity
-            userInfo.this.finish();
-
-        } else {
-//                    else store Yes in sharedPreference
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("FirstTimeInstall", "Yes");
-            editor.apply();
-        }
-
 
 //      onclick listener for save button
         saveBtn.setOnClickListener(new View.OnClickListener() {

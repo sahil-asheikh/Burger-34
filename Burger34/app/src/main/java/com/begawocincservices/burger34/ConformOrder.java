@@ -13,10 +13,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.firebase.client.Firebase;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.io.IOException;
 import java.text.SimpleDateFormat;
@@ -36,6 +42,9 @@ public class ConformOrder extends AppCompatActivity {
 
     Firebase url;
 
+    DatabaseReference rootDatabaseref;
+    DatabaseReference rootDatabaseref_percentage;
+
     static int deliveryPrice = 30;
 
     @Override
@@ -47,6 +56,8 @@ public class ConformOrder extends AppCompatActivity {
         Firebase.setAndroidContext(this);
         url = new Firebase("https://burger-34.firebaseio.com/orders");
 
+        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("couponcode");
+        rootDatabaseref_percentage = FirebaseDatabase.getInstance().getReference().child("offPercentage");
 
 //      find view by id
         builder = new android.app.AlertDialog.Builder(ConformOrder.this);
@@ -152,25 +163,63 @@ public class ConformOrder extends AppCompatActivity {
         final int totalQty = qtyEntered_01 + qtyEntered_02 + qtyEntered_03 + qtyEntered_04 + qtyEntered_05;
 
 //      fetch coupon code
-        final String coupon = "GRAB10";
+
+//        final String coupon = "";
 
         applyCouponCode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (totalQty >= 10){
-                    if (coupon_code_input.getText().toString().equalsIgnoreCase(coupon)) {
-                        int totalPriceCal = prd_01_amt + prd_02_amt + prd_03_amt + prd_04_amt + prd_05_amt;
-                        int couponApplyPrice = totalPriceCal - (10*totalPriceCal/100);
-                        int finalCouponPrice = couponApplyPrice + deliveryPrice;
-                        String priceFinal = finalCouponPrice + "/-";
-                        totalAmount.setText(priceFinal);
-                        Toast.makeText(ConformOrder.this, "Coupon Code Applied", Toast.LENGTH_SHORT).show();
-                    } else {
-                        Toast.makeText(ConformOrder.this, "Invalid Coupon Code", Toast.LENGTH_SHORT).show();
+
+                rootDatabaseref.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.exists()) {
+                            String coupon = snapshot.getValue().toString();
+
+                            if (totalQty >= 10){
+                                if (coupon_code_input.getText().toString().equalsIgnoreCase(coupon)) {
+                                    final int totalPriceCal = prd_01_amt + prd_02_amt + prd_03_amt + prd_04_amt + prd_05_amt;
+
+                                    rootDatabaseref_percentage.addValueEventListener(new ValueEventListener() {
+                                        @Override
+                                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                                            String offPercentage_String =
+                                            if (snapshot.exists()){
+                                                String offPercentage_string = snapshot.getValue().toString();
+                                                int percentage = Integer.parseInt(offPercentage_string);
+
+
+                                                int couponApplyPrice = totalPriceCal - (percentage*totalPriceCal/100);
+                                                int finalCouponPrice = couponApplyPrice + deliveryPrice;
+                                                String priceFinal = finalCouponPrice + "/-";
+                                                totalAmount.setText(priceFinal);
+                                                Toast.makeText(ConformOrder.this, "Coupon Code Applied", Toast.LENGTH_SHORT).show();
+
+                                            }
+
+                                        }
+
+                                        @Override
+                                        public void onCancelled(@NonNull DatabaseError error) {
+
+                                        }
+                                    });
+
+                                } else {
+                                    Toast.makeText(ConformOrder.this, "Invalid Coupon Code", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(ConformOrder.this, "Atleast 10 Quantities require to use coupon code", Toast.LENGTH_SHORT).show();
+                            }
+
+                        }
                     }
-                } else {
-                    Toast.makeText(ConformOrder.this, "Atleast 10 Quantities require to use coupon code", Toast.LENGTH_SHORT).show();
-                }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
             }
         });
         productempty();
@@ -323,11 +372,6 @@ public class ConformOrder extends AppCompatActivity {
             e.printStackTrace();
         }
 
-//            open home activity
-
-
-
-//====================================================================================================================================================================================
     }
 
     //method for order place via firebase
@@ -339,7 +383,6 @@ public class ConformOrder extends AppCompatActivity {
             Intent intent = new Intent(ConformOrder.this, orderPlaced.class);
             startActivity(intent);
             ConformOrder.this.finish();
-
 
     }
 

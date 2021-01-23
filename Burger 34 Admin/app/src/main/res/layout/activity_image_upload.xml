@@ -57,6 +57,17 @@
                 android:layout_marginVertical="10dp"
                 />
 
+            <EditText
+                android:id="@+id/off_percentage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="30dp"
+                android:layout_marginVertical="10dp"
+                android:ems="10"
+                android:hint="Enter Off Percentage"
+                android:inputType="number" />
+
+
             <Button
                 android:id="@+id/Update_Coupon_Code"
                 android:layout_width="match_parent"

@@ -8,16 +8,19 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
@@ -25,13 +28,18 @@ import com.google.firebase.storage.UploadTask;
 
 import java.text.DateFormat;
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class image_upload extends AppCompatActivity {
     ImageView imageView;
     Uri uri;
     String imageUrl;
-    EditText coupon_code;
+    EditText coupon_code, off_percentage;
     Button updateCoupon_btn;
+
+    private DatabaseReference rootDatabaseref;
+    private DatabaseReference rootDatabaseref_percentage;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,7 +47,11 @@ public class image_upload extends AppCompatActivity {
 
         imageView = (ImageView) findViewById(R.id.image);
         updateCoupon_btn = findViewById(R.id.Update_Coupon_Code);
-        findViewById(R.id.coupon_code);
+        coupon_code = findViewById(R.id.coupon_code);
+        off_percentage = findViewById(R.id.off_percentage);
+        rootDatabaseref = FirebaseDatabase.getInstance().getReference().child("couponcode");
+        rootDatabaseref_percentage = FirebaseDatabase.getInstance().getReference().child("offPercentage");
+
 
 //      update coupon code
         updateCoupon_btn.setOnClickListener(new View.OnClickListener() {
@@ -47,7 +59,19 @@ public class image_upload extends AppCompatActivity {
             public void onClick(View v) {
 
                 String code = coupon_code.getText().toString();
-                updateStatus_firebase(code);
+                String off_percentage_string = off_percentage.getText().toString();
+                int percentage = Integer.parseInt(off_percentage_string);
+
+//                if (TextUtils.isEmpty(userName_userInfo.getText().toString())){
+
+                if (TextUtils.isEmpty(coupon_code.getText().toString())){
+                    Toast.makeText(image_upload.this, "Please Enter Coupon Code", Toast.LENGTH_SHORT).show();
+                } else if (TextUtils.isEmpty(off_percentage.getText().toString())){
+                    Toast.makeText(image_upload.this, "Please Enter Off Percentage", Toast.LENGTH_SHORT).show();
+                } else{
+                    updateCouponCode_firebase(code);
+                    update_percentage_offer(percentage);
+                }
 
             }
         });
@@ -130,7 +154,23 @@ public class image_upload extends AppCompatActivity {
     }
 
 //  method to update the coupon code
-    public void updateStatus_firebase(String code){
-        Toast.makeText(this, "Code Updated", Toast.LENGTH_SHORT).show();
+    public void updateCouponCode_firebase(String code){
+        rootDatabaseref.setValue(code).addOnSuccessListener(new OnSuccessListener<Void>() {
+            @Override
+            public void onSuccess(Void aVoid) {
+                Toast.makeText(image_upload.this, "Coupon Code is Updated", Toast.LENGTH_SHORT).show();
+            }
+        }).addOnFailureListener(new OnFailureListener() {
+            @Override
+            public void onFailure(@NonNull Exception e) {
+                Toast.makeText(image_upload.this, "Network Error", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
+//  method to update the offer percentage
+    public void update_percentage_offer(int percentage){
+        rootDatabaseref_percentage.setValue(percentage);
+    }
+
  }

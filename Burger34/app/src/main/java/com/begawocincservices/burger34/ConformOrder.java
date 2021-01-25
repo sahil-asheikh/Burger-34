@@ -6,16 +6,19 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AlertDialogLayout;
 
 import com.firebase.client.Firebase;
 import com.google.firebase.database.DataSnapshot;
@@ -28,7 +31,7 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class ConformOrder extends AppCompatActivity {
+public class ConformOrder extends AppCompatActivity implements PopupMenu.OnMenuItemClickListener{
 
     TextView totalAmount, productQuantity_01, productQuantity_02, productQuantity_03, productQuantity_04, productQuantity_05,
             productPrice_01, productPrice_02, productPrice_03, productPrice_04, productPrice_05,
@@ -263,9 +266,7 @@ public class ConformOrder extends AppCompatActivity {
         addMoreBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(ConformOrder.this, MainActivity.class);
-                startActivity(intent);
-                ConformOrder.this.finish();
+                addMoreDialogue(v);
             }
         });
 
@@ -412,7 +413,50 @@ public class ConformOrder extends AppCompatActivity {
                 .create().show();
     }
 
-//    open edit user info
+    private void addMoreDialogue(View v) {
+
+        PopupMenu popupMenu = new PopupMenu(this, v);
+        popupMenu.setOnMenuItemClickListener(this);
+        popupMenu.inflate(R.menu.popup_menu);
+        popupMenu.show();
+
+    }
+
+    @Override
+    public boolean onMenuItemClick(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.item1:
+                Intent intent1 = new Intent(this, productDetail001.class);
+                startActivity(intent1);
+                ConformOrder.this.finish();
+                return true;
+            case R.id.item2:
+                Intent intent2 = new Intent(this, product002.class);
+                startActivity(intent2);
+                ConformOrder.this.finish();
+                return true;
+            case R.id.item3:
+                Intent intent3 = new Intent(this, product003.class);
+                startActivity(intent3);
+                ConformOrder.this.finish();
+                return true;
+            case R.id.item4:
+                Intent intent4 = new Intent(this, product004.class);
+                startActivity(intent4);
+                ConformOrder.this.finish();
+                return true;
+
+            case R.id.item5:
+                Intent intent5 = new Intent(this, product005.class);
+                startActivity(intent5);
+                ConformOrder.this.finish();
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    //    open edit user info
     public void editInfo(View view) {
         Intent intent = new Intent(ConformOrder.this, userInfo.class);
         startActivity(intent);

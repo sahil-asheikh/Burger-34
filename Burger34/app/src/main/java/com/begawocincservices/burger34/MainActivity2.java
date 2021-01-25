@@ -1,3 +1,19 @@
+//package com.begawocincservices.burger34;
+//
+//import androidx.appcompat.app.AppCompatActivity;
+//
+//import android.os.Bundle;
+//
+//public class MainActivity2 extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_main2);
+//    }
+//}
+
+
 package com.begawocincservices.burger34;
 
 import androidx.annotation.NonNull;
@@ -31,7 +47,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
 
     public static final String MainActivity_KEY = "com.begawoinc.burger34_MainActivity_KEY";
 
@@ -74,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 
 //      find view by id
         recyclerView = findViewById(R.id.card);
-        progressDialog = new ProgressDialog(MainActivity.this);
+        progressDialog = new ProgressDialog(MainActivity2.this);
         progressDialog.setMessage("Loading....");
         RecyclerView.LayoutManager Manager = new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL, false);
         recyclerView.setLayoutManager(Manager);
@@ -84,7 +100,7 @@ public class MainActivity extends AppCompatActivity {
 
         mybanner.add(mBanner);
 
-        final MyAdapter myAdapter =new MyAdapter(MainActivity.this,mybanner);
+        final MyAdapter myAdapter =new MyAdapter(MainActivity2.this,mybanner);
         recyclerView.setAdapter(myAdapter);
 
         databaseReference =FirebaseDatabase.getInstance().getReference("Banner");
@@ -131,7 +147,7 @@ public class MainActivity extends AppCompatActivity {
         btn_product001.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, productDetail001.class);
+                Intent intent = new Intent(MainActivity2.this, productDetail001.class);
                 startActivity(intent);
             }
         });
@@ -140,7 +156,7 @@ public class MainActivity extends AppCompatActivity {
         btn_product002.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, product002.class);
+                Intent intent = new Intent(MainActivity2.this, product002.class);
                 startActivity(intent);
             }
         });
@@ -149,7 +165,7 @@ public class MainActivity extends AppCompatActivity {
         btn_product003.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, product003.class);
+                Intent intent = new Intent(MainActivity2.this, product003.class);
                 startActivity(intent);
             }
         });
@@ -158,7 +174,7 @@ public class MainActivity extends AppCompatActivity {
         btn_product004.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, product004.class);
+                Intent intent = new Intent(MainActivity2.this, product004.class);
                 startActivity(intent);
             }
         });
@@ -167,7 +183,7 @@ public class MainActivity extends AppCompatActivity {
         btn_product005.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, product005.class);
+                Intent intent = new Intent(MainActivity2.this, product005.class);
                 startActivity(intent);
             }
         });
@@ -178,17 +194,17 @@ public class MainActivity extends AppCompatActivity {
 
     //  toolbar button
     public void infoImg(View view) {
-        Intent intent = new Intent(MainActivity.this, contactUsOwner.class);
+        Intent intent = new Intent(MainActivity2.this, contactUsOwner.class);
         startActivity(intent);
     }
 
     public void cart(View view) {
-        Intent intent = new Intent(MainActivity.this, ConformOrder.class);
+        Intent intent = new Intent(MainActivity2.this, ConformOrder.class);
         startActivity(intent);
     }
 
     public void userInfo(View view) {
-        Intent intent = new Intent(MainActivity.this, userInfo.class);
+        Intent intent = new Intent(MainActivity2.this, userInfo.class);
         startActivity(intent);
     }
 
@@ -206,7 +222,7 @@ public class MainActivity extends AppCompatActivity {
                 .setNegativeButton("No, I don't live in Chandrapur", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Intent intent = new Intent(MainActivity.this, locationError.class);
+                        Intent intent = new Intent(MainActivity2.this, locationError.class);
                         startActivity(intent);
                     }
                 })
@@ -226,13 +242,13 @@ public class MainActivity extends AppCompatActivity {
 
                         if (task.isSuccessful())
                         {
-                            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+                            Intent intent = new Intent(MainActivity2.this, MainActivity.class);
                             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK | Intent.FLAG_ACTIVITY_NEW_TASK);
                             startActivity(intent);
                             finish();
                         } else
                         {
-                            Toast.makeText(MainActivity.this, "Network Error", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity2.this, "Network Error", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });

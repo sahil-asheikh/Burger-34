@@ -45,40 +45,17 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginBottom="32dp"
+        android:background="#0288D1"
+        android:fontFamily="@font/acme"
         android:text="Contact us"
-        android:textSize="20sp"
-        android:fontFamily="@font/acme"
         android:textColor="#ffffff"
-        android:background="#0288D1"
-        app:layout_constraintBottom_toTopOf="@id/backToHome"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:ignore="HardcodedText" />
-
-    <Button
-        android:id="@+id/backToHome"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginBottom="30dp"
-        android:text="Go Back"
         android:textSize="20sp"
-        android:fontFamily="@font/acme"
-        android:textColor="#ffffff"
-        android:background="#0288D1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText" />
-
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
